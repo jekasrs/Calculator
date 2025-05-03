@@ -13,8 +13,16 @@ public class CalculatorTest {
     @Test()
     @Story("Addition")
     @Severity(SeverityLevel.NORMAL)
-    @DisplayName("Test addition of two positiv numbers")
+    @DisplayName("Test addition of two positive numbers")
     public void testAddition() {
         assertEquals(5, calc.add(3, 2));
+    }
+
+    @Test()
+    @Story("Subtraction")
+    @Severity(SeverityLevel.NORMAL)
+    @DisplayName("Test subtraction of two positive numbers")
+    public void testSubtract() {
+        assertEquals(0, calc.subtract(10, 10));
     }
 }
