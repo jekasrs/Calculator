@@ -31,6 +31,14 @@ public class CalculatorTest {
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Test addition with MAX value")
     public void testOverflowMaxValue() {
-        assertEquals(Integer.MIN_VALUE, calc.subtract(Integer.MAX_VALUE, 1));
+        assertEquals(Integer.MIN_VALUE, calc.add(Integer.MAX_VALUE, 1));
+    }
+
+    @Test()
+    @Story("Boundary tests")
+    @Severity(SeverityLevel.CRITICAL)
+    @DisplayName("Test addition with MAX value and zero")
+    public void testNoOverflowMaxValue() {
+        assertEquals(Integer.MAX_VALUE, calc.add(Integer.MAX_VALUE, 0));
     }
 }
