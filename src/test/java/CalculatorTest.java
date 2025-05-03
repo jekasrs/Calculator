@@ -25,4 +25,12 @@ public class CalculatorTest {
     public void testSubtract() {
         assertEquals(0, calc.subtract(10, 10));
     }
+
+    @Test()
+    @Story("Boundary tests")
+    @Severity(SeverityLevel.CRITICAL)
+    @DisplayName("Test addition with MAX value")
+    public void testOverflowMaxValue() {
+        assertEquals(Integer.MIN_VALUE, calc.subtract(Integer.MAX_VALUE, 1));
+    }
 }
